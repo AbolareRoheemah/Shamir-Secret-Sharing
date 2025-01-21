@@ -23,7 +23,7 @@ impl <F: PrimeField> Univariatepoly<F> {
     fn interpolate(xs: Vec<F>, ys: Vec<F>) -> Self {
         xs.iter().zip(ys.iter())
             .map(|(x, y)| Self::basis(x, &xs.clone()).scalar_mul(y.clone()))
-            .sum()
+            .sum()s
     }
 
     fn basis(x: &F, interpolating_set: &[F]) -> Self {
